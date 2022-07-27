@@ -12,7 +12,7 @@ function takesnapshot(){
     });
 }
 console.log("ml5 version",ml5.version)
-classifier=ml5.imageClassifier("https://teachablemachine.withgoogle.com/models/wVeewhJUg/model.json",modelLoaded)
+classifier=ml5.imageClassifier("https://teachablemachine.withgoogle.com/models/HlqVGvFxL/model.json",modelLoaded)
 function modelLoaded(){
     console.log("Model is Loaded")
 }
@@ -40,22 +40,34 @@ function getResult(error,result){
     prediction_2=result[1].label
     speak()
     
-    if (prediction_1=="Happy"){
-        document.getElementById("update_1").innerHTML="&#128522;"
+    if (prediction_1=="Thumbs up"){
+        document.getElementById("update_1").innerHTML="&#128077;"
     }
-    else if (prediction_1=="Angry"){
-        document.getElementById("update_1").innerHTML="&#128545;"
+    else if (prediction_1=="Amazing"){
+        document.getElementById("update_1").innerHTML="&#128076;"
     }
-    else if (prediction_1=="Sad"){
-        document.getElementById("update_1").innerHTML="&#128532;"
+    else if (prediction_1=="Victory"){
+        document.getElementById("update_1").innerHTML="&#9996;"
     }
-    if (prediction_2=="Happy"){
-        document.getElementById("update_2").innerHTML="&#128512;"
+    else if (prediction_1=="Fist"){
+        document.getElementById("update_1").innerHTML="&#9994;"
     }
-    else if (prediction_2=="Angry"){
-        document.getElementById("update_2").innerHTML="&#128548;"
+    else if (prediction_1=="YOLO"){
+        document.getElementById("update_1").innerHTML="&#129304;"
     }
-    else if (prediction_2=="Sad"){
-        document.getElementById("update_2").innerHTML="&#128546;"
+    if (prediction_2=="Thumbs up"){
+        document.getElementById("update_2").innerHTML="&#128077;"
+    }
+    else if (prediction_2=="Amazing"){
+        document.getElementById("update_2").innerHTML="&#128076;"
+    }
+    else if (prediction_2=="Victory"){
+        document.getElementById("update_2").innerHTML="&#9996;"
+    }
+    else if (prediction_2=="Fist"){
+        document.getElementById("update_2").innerHTML="&#9994;"
+    }
+    else if (prediction_2=="YOLO"){
+        document.getElementById("update_2").innerHTML="&#129304;"
     }
 }}
